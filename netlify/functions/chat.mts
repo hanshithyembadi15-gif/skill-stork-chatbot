@@ -199,6 +199,7 @@ export default async (req: Request, context: Context) => {
     const apiKey = Netlify.env.get("ANTHROPIC_API_KEY");
 
     if (!apiKey) {
+      console.error("CHAT FUNCTION ERROR: ANTHROPIC_API_KEY environment variable is missing or not set.");
       return new Response(
         JSON.stringify({
           error: "Server is not configured yet — ANTHROPIC_API_KEY is missing. Add it in Site configuration \u2192 Environment variables.",
@@ -226,6 +227,7 @@ export default async (req: Request, context: Context) => {
 
     if (!anthropicRes.ok) {
       const detail = data?.error?.message || ("Upstream error, HTTP " + anthropicRes.status);
+      console.error("CHAT FUNCTION ERROR: Anthropic API returned an error —", "HTTP", anthropicRes.status, "—", detail, "— full response:", JSON.stringify(data));
       return new Response(JSON.stringify({ error: detail }), {
         status: anthropicRes.status,
         headers: { "Content-Type": "application/json", ...corsHeaders() },
@@ -240,6 +242,7 @@ export default async (req: Request, context: Context) => {
       headers: { "Content-Type": "application/json", ...corsHeaders() },
     });
   } catch (err) {
+    console.error("CHAT FUNCTION ERROR: Uncaught exception —", err instanceof Error ? err.stack : String(err));
     return new Response(JSON.stringify({ error: "Something went wrong processing the request." }), {
       status: 500,
       headers: { "Content-Type": "application/json", ...corsHeaders() },
