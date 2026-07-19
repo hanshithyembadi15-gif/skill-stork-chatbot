@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Skill Stork International School — Assistant Demo</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;0,700;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1E3350;
+    --marigold: #E3A73F;
+    --parchment: #FAF5EA;
+    --ink: #223142;
+    --muted: #6b6353;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: linear-gradient(160deg, #FBF7EF 0%, #F3EBD9 100%);
+    color: var(--ink);
+  }
+  header {
+    padding: 56px 24px 48px;
+    text-align: center;
+  }
+  header img {
+    height: 56px;
+    margin-bottom: 20px;
+  }
+  header .eyebrow {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--marigold);
+    text-transform: uppercase;
+  }
+  header h1 {
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-size: 32px;
+    margin: 10px 0 8px;
+    color: var(--navy);
+  }
+  header p {
+    font-size: 15px;
+    color: var(--muted);
+    max-width: 480px;
+    margin: 0 auto;
+  }
+  main {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0 24px 60px;
+  }
+  .card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 22px 26px;
+    box-shadow: 0 8px 30px -10px rgba(30,51,80,0.15);
+    font-size: 14.5px;
+    line-height: 1.7;
+  }
+  .card strong { color: var(--navy); }
+  .card code {
+    background: var(--parchment);
+    padding: 2px 6px;
+    border-radius: 5px;
+    font-size: 13px;
+  }
+  .hint {
+    text-align: center;
+    margin-top: 22px;
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    color: var(--muted);
+    font-size: 14px;
+  }
+</style>
+</head>
+<body>
+  <header>
+    <img src="https://skillstork.org/wp-content/uploads/2025/10/new-logo.png" alt="Skill Stork International School" />
+    <div class="eyebrow">Assistant Demo</div>
+    <h1>Your chatbot is live</h1>
+    <p>This page runs the real, deployed version of the Skill Stork assistant — same backend, same knowledge base, same design that will appear on the actual website.</p>
+  </header>
+  <main>
+    <div class="card">
+      <p><strong>To try it:</strong> click the round logo bubble in the bottom-right corner.</p>
+      <p><strong>To embed it on the real site:</strong> copy the one <code>&lt;script&gt;</code> tag from <code>README.md</code> onto any page on <code>skillstork.org</code> — no other setup needed there.</p>
+      <p><strong>To edit what it knows:</strong> open <code>server.js</code> and update the <code>SYSTEM_PROMPT</code> — fees, staff, calendar, or anything else the school provides officially.</p>
+    </div>
+    <p class="hint">Give it a try — ask about CBSE, Cambridge, sports, or the arts.</p>
+  </main>
+
+  <script src="/widget.js"></script>
+</body>
+</html>
